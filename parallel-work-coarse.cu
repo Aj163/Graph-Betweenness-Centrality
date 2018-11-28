@@ -190,7 +190,6 @@ float *betweennessCentrality(Graph *graph, int nodeCount)
     const int BLOCK_COUNT = MAX_MEMORY / (4 * 5 * nodeCount);
     // pritnf(">> %d\n", BLOCK_COUNT);
 
-    //TODO: Allocate device memory for bwCentrality
     catchCudaError(cudaMalloc((void **)&device_bwCentrality, sizeof(float) * nodeCount));
     catchCudaError(cudaMalloc((void **)&sigma, sizeof(int) * nodeCount * BLOCK_COUNT));
     catchCudaError(cudaMalloc((void **)&distance, sizeof(int) * nodeCount * BLOCK_COUNT));

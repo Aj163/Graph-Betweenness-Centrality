@@ -169,7 +169,6 @@ double *betweennessCentrality(Graph *graph, int nodeCount)
     double *device_bwCentrality, *dependency;
     int *sigma, *distance;
 
-    //TODO: Allocate device memory for bwCentrality
     catchCudaError(cudaMalloc((void **)&device_bwCentrality, sizeof(double) * nodeCount));
     catchCudaError(cudaMalloc((void **)&sigma, sizeof(int) * nodeCount));
     catchCudaError(cudaMalloc((void **)&distance, sizeof(int) * nodeCount));
